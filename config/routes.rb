@@ -53,4 +53,18 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
+  #
+
+  post  "/user" => "user#create_user"
+  post "/user/:user_id/cube" => "cube#create_cube"
+  post "/user/:user_id/content" => "content#create_content"
+  post "/user/:user_id/cube/:cube_id/content" => "content#add_content_to_cube"
+  delete "/user/:user_id/cube/:cube_id/content/:content_id" => "content#delete_content_from_cube"
+  delete "/user/:user_id/cube/:cube_id" => "cube#delete_cube"
+  post "/user/:share_user_id/cube/:cube_id/share" => "cube#share_cube"
+  post "/user/:share_user_id/content/:content_id/share" => "content#share_content"
+  get "/user/:user_id/cube" => "cube#list_cube"
+  get "/user/:user_id/content" => "content#list_content"
+
+
 end
