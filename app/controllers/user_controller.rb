@@ -5,7 +5,7 @@ class UserController < ApplicationController
     if user.nil?
       render json: { message: 'User not created' }, status: :bad_request
     else
-      render json: user, root: false
+      render json: user, root: false, status: :ok
     end
   end
 end
